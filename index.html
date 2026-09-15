@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>JOHN PARFUMS | O Poder da Essência</title>
+
+  <meta name="description" content="Descubra perfumes marcantes, sofisticados e com excelente custo-benefício.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #0b0b0d;
+      color: #fff;
+    }
+
+    /* HEADER */
+    header {
+      width: 100%;
+      background: #0b0b0d;
+      border-bottom: 1px solid #252525;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: #d4af37;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #ddd;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #d4af37;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 70px 20px;
+      background:
+        radial-gradient(circle at center, #252015 0%, #0b0b0d 60%);
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero small {
+      color: #d4af37;
+      font-size: 14px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 78px);
+      margin: 20px 0;
+      letter-spacing: 3px;
+    }
+
+    .hero h1 span {
+      color: #d4af37;
+    }
+
+    .hero p {
+      color: #bbb;
+      font-size: 18px;
+      line-height: 1.7;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .hero-button {
+      display: inline-block;
+      margin-top: 35px;
+      padding: 16px 30px;
+      background: #d4af37;
+      color: #111;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .hero-button:hover {
+      transform: translateY(-3px);
+      background: #f0cf55;
+    }
+
+    /* SECTION */
+    .section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 70px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #999;
+    }
+
+    /* CATEGORIES */
+    .categories {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 45px;
+    }
+
+    .category {
+      border: 1px solid #333;
+      background: #141416;
+      color: #ddd;
+      padding: 12px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .category:hover {
+      border-color: #d4af37;
+      color: #d4af37;
+    }
+
+    /* PRODUCTS */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .product {
+      background: #141416;
+      border: 1px solid #272727;
+      border-radius: 14px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .product:hover {
+      transform: translateY(-6px);
+      border-color: #d4af37;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+      background: #222;
+    }
+
+    .product-info {
+      padding: 20px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #d4af37;
+      color: #111;
+      font-size: 11px;
+      font-weight: bold;
+      padding: 5px 9px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+
+    .product h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .description {
+      color: #999;
+      font-size: 13px;
+      line-height: 1.5;
+      min-height: 40px;
+    }
+
+    .rating {
+      color: #d4af37;
+      margin: 14px 0;
+      font-size: 14px;
+    }
+
+    .price {
+      font-size: 23px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .offer-button {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 13px;
+      background: #d4af37;
+      color: #111;
+      text-decoration: none;
+      border-radius: 7px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .offer-button:hover {
+      background: #f0cf55;
+    }
+
+    /* BANNER */
+    .banner {
+      margin-top: 30px;
+      padding: 55px 25px;
+      border-radius: 16px;
+      text-align: center;
+      background:
+        linear-gradient(135deg, #17130a, #29210e);
+      border: 1px solid #4b3b16;
+    }
+
+    .banner h2 {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .banner p {
+      color: #aaa;
+      margin-bottom: 25px;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid #252525;
+      margin-top: 50px;
+      padding: 40px 20px;
+      text-align: center;
+      color: #777;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: #d4af37;
+    }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      nav {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header-content {
+        justify-content: center;
+      }
+
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .product-image {
+        height: 320px;
+      }
+
+      .hero {
+        min-height: 480px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-content">
+
+      <div class="logo">
+        JOHN <span>PARFUMS</span>
+      </div>
+
+      <nav>
+        <a href="#inicio">Início</a>
+        <a href="#perfumes">Perfumes</a>
+        <a href="#ofertas">Ofertas</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+
+    <div class="hero-content">
+
+      <small>JOHN PARFUMS</small>
+
+      <h1>
+        O Poder da <span>Essência</span>
+      </h1>
+
+      <p>
+        Encontre perfumes marcantes, sofisticados e
+        com excelente custo-benefício.
+        Selecionamos opções para quem gosta de deixar sua presença por onde passa.
+      </p>
+
+      <a href="#perfumes" class="hero-button">
+        VER PERFUMES
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRODUTOS -->
+  <section class="section" id="perfumes">
+
+    <div class="section-title">
+      <h2>Perfumes em destaque</h2>
+      <p>Confira alguns dos perfumes mais procurados.</p>
+    </div>
+
+
+    <div class="categories">
+
+      <div class="category">Masculinos</div>
+      <div class="category">Femininos</div>
+      <div class="category">Árabes</div>
+      <div class="category">Importados</div>
+
+    </div>
+
+
+    <div class="products">
+
+
+      <!-- PRODUTO 1 -->
+      <div class="product">
+
+        <img
+          class="product-image"
+          src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=700&q=80"
+          alt="Perfume masculino"
+        >
+
+        <div class="product-info">
+
+          <span class="tag">DESTAQUE</span>
+
+          <h3>Perfume Masculino</h3>
+
+          <p class="description">
+            Fragrância marcante para quem gosta de presença e elegância.
+          </p>
+
+          <div class="rating">
+            ★★★★★
+          </div>
+
+          <div class="price">
+            R$ 199,90
+          </div>
+
+          <!-- COLOQUE SEU LINK DO MERCADO LIVRE AQUI -->
+          <a
+            href="SEU-LINK-DE-AFILIADO"
+            target="_blank"
+            class="offer-button"
+          >
+            VER OFERTA
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUTO 2 -->
+      <div class="product">
+
+        <img
+          class="product-image"
+          src="https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?auto=format&fit=crop&w=700&q=80"
+          alt="Perfume importado"
+        >
+
+        <div class="product-info">
+
+          <span class="tag">MAIS PROCURADO</span>
+
+          <h3>Perfume Importado</h3>
+
+          <p class="description">
+            Uma fragrância sofisticada para momentos especiais.
+          </p>
+
+          <div class="rating">
+            ★★★★★
+          </div>
+
+          <div class="price">
+            R$ 229,90
+          </div>
+
+          <!-- COLOQUE SEU LINK DO MERCADO LIVRE AQUI -->
+          <a
+            href="SEU-LINK-DE-AFILIADO"
+            target="_blank"
+            class="offer-button"
+          >
+            VER OFERTA
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUTO 3 -->
+      <div class="product">
+
+        <img
+          class="product-image"
+          src="https://images.unsplash.com/photo-1587017539504-67cfbddac569?auto=format&fit=crop&w=700&q=80"
+          alt="Perfume árabe"
+        >
+
+        <div class="product-info">
+
+          <span class="tag">ÁRABE</span>
+
+          <h3>Perfume Árabe</h3>
+
+          <p class="description">
+            Fragrância intensa, elegante e ideal para quem quer se destacar.
+          </p>
+
+          <div class="rating">
+            ★★★★★
+          </div>
+
+          <div class="price">
+            R$ 189,90
+          </div>
+
+          <!-- COLOQUE SEU LINK DO MERCADO LIVRE AQUI -->
+          <a
+            href="SEU-LINK-DE-AFILIADO"
+            target="_blank"
+            class="offer-button"
+          >
+            VER OFERTA
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUTO 4 -->
+      <div class="product">
+
+        <img
+          class="product-image"
+          src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=700&q=80"
+          alt="Perfume sofisticado"
+        >
+
+        <div class="product-info">
+
+          <span class="tag">OFERTA</span>
+
+          <h3>Perfume Sofisticado</h3>
+
+          <p class="description">
+            Uma opção versátil para usar durante o dia ou à noite.
+          </p>
+
+          <div class="rating">
+            ★★★★★
+          </div>
+
+          <div class="price">
+            R$ 179,90
+          </div>
+
+          <!-- COLOQUE SEU LINK DO MERCADO LIVRE AQUI -->
+          <a
+            href="SEU-LINK-DE-AFILIADO"
+            target="_blank"
+            class="offer-button"
+          >
+            VER OFERTA
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- BANNER -->
+    <div class="banner" id="ofertas">
+
+      <h2>Encontre sua próxima fragrância ✨</h2>
+
+      <p>
+        Selecionamos produtos e ofertas para você encontrar
+        seu próximo perfume favorito.
+      </p>
+
+      <a
+        href="SEU-LINK-DE-AFILIADO"
+        target="_blank"
+        class="hero-button"
+      >
+        CONFERIR OFERTAS
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <p>
+      © 2026 <strong>JOHN PARFUMS</strong>
+    </p>
+
+    <br>
+
+    <p>
+      Site de divulgação de produtos.
+      Os preços e condições podem variar conforme a loja.
+    </p>
+
+  </footer>
+
+
+</body>
+</html>
